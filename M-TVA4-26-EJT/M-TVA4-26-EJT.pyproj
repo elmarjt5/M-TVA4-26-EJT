@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5db55b04-6fee-406b-afb9-4744b7a86c96</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>M_TVA4_26_EJT.py</StartupFile>
+    <StartupFile>töö1.1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="M_TVA4_26_EJT.py" />
+    <Compile Include="töö1.1.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
