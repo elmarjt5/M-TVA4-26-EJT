@@ -3,10 +3,14 @@
 print("Tere, maailm!")
 
 nimi = input("Mis on sinu nimi? ")
-vanus = int(input("Kui vana sa oled? "))
 
-print("Tere, maailm! Tervitan sind", nimi + "!")
-print("Tere, maailm! Tervitan sind", nimi + "! Sa oled", vanus, "aastat vana.")
+try:
+    vanus = int(input("Kui vana sa oled? "))
+    print("Tere, maailm! Tervitan sind", nimi + "!")
+    print("Tere, maailm! Tervitan sind", nimi + "! Sa oled", vanus, "aastat vana.")
+
+except ValueError:
+    print("Viga! Palun sisesta vanus numbrina.")
 
 # Ülessanne 2 
 
@@ -37,11 +41,9 @@ print("Laual on", kommid, "kommi.")
 
 ara_voetud = int(input("Mitu kommi soovid võtta? "))
 
-if ara_voetud >= 0 and ara_voetud <= kommid:
-    kommid = kommid - ara_voetud
-    print("Lauale jäi", kommid, "kommi.")
-else:
-    print("Nii palju komme ei saa võtta.")
+kommid = kommid - ara_voetud
+
+print("Lauale jäi", kommid, "kommi.")
 
 
 
@@ -81,25 +83,33 @@ print("Sinu kiirus oli", round(kiirus, 2), "km/h")
 #Ülessanne 7
 
 
-a = float(input("Sisesta esimene arv: "))
-b = float(input("Sisesta teine arv: "))
-c = float(input("Sisesta kolmas arv: "))
-d = float(input("Sisesta neljas arv: "))
-e = float(input("Sisesta viies arv: "))
+try:
+    a = int(input("Sisesta esimene arv: "))
+    b = int(input("Sisesta teine arv: "))
+    c = int(input("Sisesta kolmas arv: "))
+    d = int(input("Sisesta neljas arv: "))
+    e = int(input("Sisesta viies arv: "))
 
-summa = a + b + c + d + e
-keskmine = summa / 5
+    summa = a + b + c + d + e
+    keskmine = summa / 5
 
-print("Arvude summa on", summa)
-print("Aritmeetiline keskmine on", keskmine)
+    print("Arvude summa on", summa)
+    print("Aritmeetiline keskmine on", keskmine)
 
-jagaja = int(input("Sisesta arv, millega summat jagada: "))
+    jagaja = int(input("Sisesta jagaja: "))
 
-taisosa = summa // jagaja
-jaak = summa % jagaja
+    taisosa = summa // jagaja
+    jaak = summa % jagaja
 
-print("Jagamise täisarvuline osa on", int(taisosa))
-print("Jääk on", round(jaak, 2))
+    print("Täisarvuline osa on", taisosa)
+    print("Jääk on", jaak)
+
+except ValueError:
+    print("Viga! Sisesta täisarv.")
+
+except ZeroDivisionError:
+    print("Viga! Nulliga ei saa jagada.")
+
 
 
 #Ülessanne 8
@@ -127,41 +137,22 @@ print("Kolmnurga ümbermõõt on", P)
 #Ülessanne 10
 
 
-pitsa_hind = 12.90
-
-inimesed = int(input("Mitu inimest pitsat jagavad? "))
-
-jootraha = pitsa_hind * 0.10
-kokku = pitsa_hind + jootraha
-
-iga_inimene = kokku / inimesed
-
-print("Pitsa hind on", pitsa_hind, "eurot.")
-print("Jootraha on", round(jootraha, 2), "eurot.")
-print("Kokku tuleb maksta", round(kokku, 2), "eurot.")
-print("Iga inimene maksab", round(iga_inimene, 2), "eurot.")
-
-
-#Ülessanne 11
-
-
 try:
     pitsa_hind = 12.90
 
     inimesed = int(input("Mitu inimest pitsat jagavad? "))
 
-    if inimesed > 0:
-        jootraha = pitsa_hind * 0.10
-        kokku = pitsa_hind + jootraha
-        iga_inimene = kokku / inimesed
+    jootraha = pitsa_hind * 0.10
+    kokku = pitsa_hind + jootraha
+    iga_inimene = kokku / inimesed
 
-        print("Pitsa hind on", pitsa_hind, "eurot.")
-        print("Jootraha on", round(jootraha, 2), "eurot.")
-        print("Kokku tuleb maksta", round(kokku, 2), "eurot.")
-        print("Iga inimene maksab", round(iga_inimene, 2), "eurot.")
-    else:
-        print("Inimeste arv peab olema suurem kui 0.")
+    print("Pitsa hind on", pitsa_hind, "eurot.")
+    print("Jootraha on", round(jootraha, 2), "eurot.")
+    print("Kokku tuleb maksta", round(kokku, 2), "eurot.")
+    print("Iga inimene maksab", round(iga_inimene, 2), "eurot.")
 
 except ValueError:
-    print("Viga! Palun sisesta täisarv.")
+    print("Viga! Sisesta täisarv.")
 
+except ZeroDivisionError:
+    print("Viga! Inimeste arv ei saa olla 0.")
